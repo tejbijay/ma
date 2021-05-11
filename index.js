@@ -118,3 +118,9 @@ const fs = require("fs");
 
 
 // fs.unlinkSync("./npmMod/ndex.js");
+
+
+
+// fs.mkdirSync("modwrapper");
+
+fs.writeFileSync("./modwrapper/index.js","");
