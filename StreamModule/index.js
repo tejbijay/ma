@@ -107,19 +107,29 @@ server.on("request",(req,res)=>{
     // });
 
 
-    const rstream = fs.ReadStream("inputs.txt");
+    // const rstream = fs.ReadStream("inputs.txt");
 
-    rstream.on("data",(chunkdata)=>{
-        res.write(chunkdata);
-    });
+    // rstream.on("data",(chunkdata)=>{
+    //     res.write(chunkdata);
+    // });
 
-    rstream.on("end",()=>{
-        res.end();
-    });
+    // rstream.on("end",()=>{
+    //     res.end();
+    // });
 
-    rstream.on("error",(err)=>{
-        res.end("file not found");
-    });
+    // rstream.on("error",(err)=>{
+    //     res.end("file not found");
+    // });
+
+
+
+//3rd way
+
+const rstream = fs.createReadStream("input.txt");
+
+
+rstream.pipe(res);
+
 
 });
 
